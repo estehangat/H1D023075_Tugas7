@@ -22,7 +22,7 @@ Future<bool> checkLogin() async {
 ```
 Mengecek apakah user sudah login atau belum, data disimpan di `SharedPreferences` dan mengembalikan nilai `true` or `false`.
 
-### storage.dart
+### `storage.dart`
 ```dart
 static Future<void> login() async {
   SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -39,7 +39,7 @@ static Future<void> logout() async {
 ```
 Menghapus semua data di `SharedPreferences`, termasuk status login.
 
-### login_page.dart
+### `login_page.dart`
 ```dart
 final TextEditingController user = TextEditingController();
 final TextEditingController pass = TextEditingController();
@@ -60,7 +60,7 @@ void handleLogin(BuildContext context) async {
 ```
 Validasi username dan password, jika benar maka simpan status login dan pindah ke Home, jika salah maka tampilkan Snackbar.
 
-### home_page.dart
+### `home_page.dart`
 ```dart
 final pages = [
   Center(child: Text("Dashboard", style: TextStyle(fontSize: 24))),
@@ -78,7 +78,7 @@ bottomNavigationBar: BottomNav(
 ```
 Menggunakan widget custom BottomNav, saat user klik item navbar mana halaman akan berubah.
 
-### profile_page.dart
+### `profile_page.dart`
 ```dart
 return Center(
   child: Text("Profile Page", style: TextStyle(fontSize: 24)),
@@ -86,7 +86,7 @@ return Center(
 ```
 Menampilkan text "Profile Page".
 
-### settings_page.dart
+### `settings_page.dart`
 ```dart
 Future<void> handleLogout(BuildContext context) async {
   await StorageService.logout();
@@ -95,7 +95,7 @@ Future<void> handleLogout(BuildContext context) async {
 ```
 Log Out dengan menghapus data login serta mengarahkan user kembali ke halaman login.
 
-### navbar.dart
+### `navbar.dart`
 ```dart
 BottomNavigationBar(
   currentIndex: currentIndex,
